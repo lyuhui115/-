@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广州旅游攻略 | 小红书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff2442', // 小红书红色
+                        secondary: '#ff7d97', // 浅红色
+                        accent: '#ffc233', // 黄色强调
+                        dark: '#333333', // 深色文字
+                        light: '#f8f8f8', // 浅色背景
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            }
+            .rotate-hover {
+                transition: transform 0.3s ease;
+            }
+            .rotate-hover:hover {
+                transform: rotate(3deg) scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light min-h-screen font-sans">
+    <!-- 顶部导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-arrow-left text-dark text-xl"></i>
+                <span class="text-dark font-medium">返回</span>
+            </div>
+            <div class="text-primary font-bold text-lg">小红书</div>
+            <div class="flex space-x-4">
+                <i class="fa fa-share-alt text-dark text-xl"></i>
+                <i class="fa fa-ellipsis-h text-dark text-xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-2 pb-20">
+        <!-- 封面图片 -->
+        <div class="relative rounded-xl overflow-hidden mt-2 mb-4">
+            <img src="https://picsum.photos/id/1036/800/600" alt="广州城市风光" class="w-full h-[60vh] object-cover">
+            
+            <!-- 顶部文字叠加 -->
+            <div class="absolute top-4 left-4 right-4">
+                <span class="bg-primary text-white text-xs py-1 px-3 rounded-full inline-block mb-2">
+                    <i class="fa fa-map-marker mr-1"></i>广州旅游攻略
+                </span>
+                <h1 class="text-white text-[clamp(1.8rem,5vw,3rem)] font-bold leading-tight text-shadow-lg">
+                    广州3天2晚<br>精华游路线
+                </h1>
+            </div>
+            
+            <!-- 底部渐变遮罩 -->
+            <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
+        </div>
+        
+        <!-- 用户信息 -->
+        <div class="flex items-center mb-4 px-2">
+            <img src="https://picsum.photos/id/64/100/100" alt="旅游博主头像" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
+            <div class="ml-3">
+                <div class="flex items-center">
+                    <span class="font-medium text-dark">旅行日记</span>
+                    <span class="ml-2 text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">关注</span>
+                </div>
+                <p class="text-xs text-gray-500">带你探索城市美好</p>
+            </div>
+            <button class="ml-auto bg-primary text-white text-sm py-1.5 px-4 rounded-full">
+                关注
+            </button>
+        </div>
+        
+        <!-- 攻略内容预览 -->
+        <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
+            <p class="text-dark mb-4 leading-relaxed">
+                广州3天2晚精华游，带你吃遍广州美食，玩转必打卡景点！收藏这篇就够啦～
+            </p>
+            
+            <!-- 行程亮点 -->
+            <div class="grid grid-cols-2 gap-3 mb-4">
+                <div class="bg-light rounded-lg p-3 flex items-start">
+                    <div class="bg-primary/10 text-primary p-2 rounded-full">
+                        <i class="fa fa-cutlery"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-dark text-sm">美食推荐</h3>
+                        <p class="text-xs text-gray-500">早茶/烧腊/糖水</p>
+                    </div>
+                </div>
+                <div class="bg-light rounded-lg p-3 flex items-start">
+                    <div class="bg-accent/10 text-accent p-2 rounded-full">
+                        <i class="fa fa-map-o"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-dark text-sm">必去景点</h3>
+                        <p class="text-xs text-gray-500">10+热门打卡地</p>
+                    </div>
+                </div>
+                <div class="bg-light rounded-lg p-3 flex items-start">
+                    <div class="bg-blue-100 text-blue-500 p-2 rounded-full">
+                        <i class="fa fa-subway"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-dark text-sm">交通指南</h3>
+                        <p class="text-xs text-gray-500">地铁/公交攻略</p>
+                    </div>
+                </div>
+                <div class="bg-light rounded-lg p-3 flex items-start">
+                    <div class="bg-green-100 text-green-500 p-2 rounded-full">
+                        <i class="fa fa-bed"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-dark text-sm">住宿推荐</h3>
+                        <p class="text-xs text-gray-500">高性价比选择</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 景点图片网格 -->
+            <div class="grid grid-cols-3 gap-1.5 mb-4">
+                <img src="https://picsum.photos/id/292/300/300" alt="广州塔夜景" class="w-full h-24 object-cover rounded-lg rotate-hover">
+                <img src="https://picsum.photos/id/431/300/300" alt="广州早茶" class="w-full h-24 object-cover rounded-lg rotate-hover">
+                <img src="https://picsum.photos/id/325/300/300" alt="陈家祠" class="w-full h-24 object-cover rounded-lg rotate-hover">
+            </div>
+            
+            <!-- 标签 -->
+            <div class="flex flex-wrap gap-2 mb-3">
+                <span class="bg-light text-gray-600 text-xs py-1 px-2 rounded-full">#广州旅游</span>
+                <span class="bg-light text-gray-600 text-xs py-1 px-2 rounded-full">#广州美食</span>
+                <span class="bg-light text-gray-600 text-xs py-1 px-2 rounded-full">#旅行攻略</span>
+                <span class="bg-light text-gray-600 text-xs py-1 px-2 rounded-full">#周末去哪儿</span>
+                <span class="bg-light text-gray-600 text-xs py-1 px-2 rounded-full">#广州打卡</span>
+            </div>
+        </div>
+        
+        <!-- 互动区 -->
+        <div class="bg-white rounded-xl p-4 shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex space-x-6">
+                    <div class="flex items-center">
+                        <i class="fa fa-heart-o text-primary text-xl"></i>
+                        <span class="ml-1 text-sm text-gray-600">2.4w</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-comment-o text-gray-500 text-xl"></i>
+                        <span class="ml-1 text-sm text-gray-600">356</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-star-o text-accent text-xl"></i>
+                        <span class="ml-1 text-sm text-gray-600">8.7k</span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-bookmark-o text-gray-500 text-xl"></i>
+                    <span class="ml-1 text-sm text-gray-600">收藏</span>
+                </div>
+            </div>
+            
+            <!-- 精选评论 -->
+            <div class="border-t border-gray-100 pt-3">
+                <h3 class="font-medium text-dark mb-2">精选评论</h3>
+                <div class="mb-3">
+                    <div class="flex items-start">
+                        <img src="https://picsum.photos/id/91/100/100" alt="用户头像" class="w-6 h-6 rounded-full">
+                        <div class="ml-2 flex-1">
+                            <div class="bg-light rounded-lg p-2">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-medium text-dark">旅游爱好者</span>
+                                    <span class="text-xs text-gray-400">2天前</span>
+                                </div>
+                                <p class="text-xs text-gray-600">求问楼主，广州哪里的早茶最正宗呀？</p>
+                            </div>
+                            <div class="flex items-center mt-1 ml-1">
+                                <span class="text-xs text-primary">作者回复：</span>
+                                <span class="text-xs text-gray-600 ml-1">推荐点都德和陶陶居，老字号味道很正宗！</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-start">
+                        <img src="https://picsum.photos/id/26/100/100" alt="用户头像" class="w-6 h-6 rounded-full">
+                        <div class="ml-2">
+                            <div class="bg-light rounded-lg p-2">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-medium text-dark">吃货一枚</span>
+                                    <span class="text-xs text-gray-400">3天前</span>
+                                </div>
+                                <p class="text-xs text-gray-600">攻略很详细，下个月去广州就靠它了！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 相关推荐 -->
+        <div class="mt-4">
+            <h2 class="font-bold text-dark mb-3">相关推荐</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://picsum.photos/id/429/400/300" alt="广州美食攻略" class="w-full h-36 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-dark text-sm line-clamp-2">广州美食地图 | 本地人私藏的10家老字号</h3>
+                        <div class="flex items-center mt-2">
+                            <img src="https://picsum.photos/id/65/100/100" alt="用户头像" class="w-5 h-5 rounded-full">
+                            <span class="ml-1 text-xs text-gray-500">美食探店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://picsum.photos/id/318/400/300" alt="广州夜游攻略" class="w-full h-36 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-dark text-sm line-clamp-2">广州夜游指南 | 珠江夜景美到窒息</h3>
+                        <div class="flex items-center mt-2">
+                            <img src="https://picsum.photos/id/66/100/100" alt="用户头像" class="w-5 h-5 rounded-full">
+                            <span class="ml-1 text-xs text-gray-500">城市夜景</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 底部评论栏 -->
+    <footer class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-3">
+        <div class="flex items-center">
+            <input type="text" placeholder="分享你的广州旅行体验..." 
+                class="flex-1 bg-light rounded-full py-2 px-4 text-sm focus:outline-none">
+            <div class="ml-3 flex space-x-4">
+                <i class="fa fa-image text-gray-500 text-xl"></i>
+                <i class="fa fa-smile-o text-gray-500 text-xl"></i>
+                <button class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">
+                    <i class="fa fa-paper-plane-o"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 图片加载动画效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.5s ease';
+                
+                img.onload = () => {
+                    img.style.opacity = '1';
+                };
+                
+                // 如果图片已经缓存
+                if (img.complete) {
+                    img.style.opacity = '1';
+                }
+            });
+            
+            // 点赞交互效果
+            const likeBtn = document.querySelector('.fa-heart-o');
+            let liked = false;
+            
+            likeBtn.addEventListener('click', () => {
+                if (liked) {
+                    likeBtn.classList.remove('fa-heart', 'text-primary');
+                    likeBtn.classList.add('fa-heart-o');
+                    liked = false;
+                } else {
+                    likeBtn.classList.remove('fa-heart-o');
+                    likeBtn.classList.add('fa-heart', 'text-primary');
+                    liked = true;
+                }
+            });
+            
+            // 收藏交互效果
+            const bookmarkBtn = document.querySelector('.fa-bookmark-o');
+            let bookmarked = false;
+            
+            bookmarkBtn.addEventListener('click', () => {
+                if (bookmarked) {
+                    bookmarkBtn.classList.remove('fa-bookmark', 'text-primary');
+                    bookmarkBtn.classList.add('fa-bookmark-o');
+                    bookmarked = false;
+                } else {
+                    bookmarkBtn.classList.remove('fa-bookmark-o');
+                    bookmarkBtn.classList.add('fa-bookmark', 'text-primary');
+                    bookmarked = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
